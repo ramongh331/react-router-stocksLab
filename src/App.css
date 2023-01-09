@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.nav{
+.nav {
   display: flex;
   justify-content: space-evenly;
   background-color: black;
@@ -10,9 +10,26 @@
   align-items: center;
 }
 
-.nav a{
+.nav a {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
+}
+
+.boldText {
+  font-weight: 800;
+}
+
+.stock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table{
+  width: 90%;
+}
+tr {
+  border-bottom: 2px solid black;
 }
 

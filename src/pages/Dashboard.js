@@ -1,9 +1,13 @@
 import data from "../data";
 import {Link } from 'react-router-dom'
+import "../App.css"
 
 const Dashboard = props => {
+    
+    
     return (
         <div className="stock">
+            <h1>Most Active Stocks</h1>
              <table>
                         <thead>
                             <tr>
@@ -15,15 +19,18 @@ const Dashboard = props => {
             {
                 data.map(stock => {
                     const {name, symbol, lastPrice, change} = stock;
-                    return (<tr>
-                        <td>
-                            <Link to={`/stocks/${symbol}`}>
-                            <p>{name}</p>
-                        </Link>
-                        </td>
-                        <td><p>${lastPrice}</p></td>
-                        <td><p>{change}</p></td>
-                        </tr>       
+                    const twoDigitChange = change.toFixed(2);
+                    return (<tbody>
+                        <tr className="row">
+                            <td>
+                                <Link to={`/stocks/${symbol}`}>
+                                <p>{name}</p>
+                            </Link>
+                            </td>
+                            <td className="price"><p>${lastPrice}</p></td>
+                            <td><p>${twoDigitChange}</p></td>
+                            </tr>
+                    </tbody>      
                     )
                 })
             }

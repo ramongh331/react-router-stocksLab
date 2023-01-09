@@ -1,7 +1,8 @@
+import data from "./data";
 
-
-export const stockLoader = async({params}) => {
+export const stockLoader = ({params}) => {
     const symbol = params.symbol;
-    return (await fetch(`/stocks/${symbol}`))
+const stockData = data.find(element => element.symbol === symbol)
+    return (stockData)
 
 }

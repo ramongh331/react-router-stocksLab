@@ -5,6 +5,7 @@ import About from './pages/About'
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
 import Stock from './pages/Stock'
+import { stockLoader } from './Loaders'
 
 
 
@@ -15,7 +16,7 @@ const Router = createBrowserRouter(
         {/* Child Routes */}
         <Route path='' element={<Home />} />
         <Route path='about' element={<About />} />
-        <Route path='stocks/:symbol' element={<Stock />} />
+        <Route path='stocks/:symbol' element={<Stock />} loader={stockLoader}/>
         <Route path='stocks' element={<Dashboard />} />
     </Route>
 ))
